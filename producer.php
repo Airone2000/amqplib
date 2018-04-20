@@ -19,3 +19,6 @@ $message = new \PhpAmqpLib\Message\AMQPMessage($body);
 $channel->basic_publish($message, '', $queue);
 
 printf("Message sent: '%s'\n", $body);
+
+$channel->close();
+$connection->close();
